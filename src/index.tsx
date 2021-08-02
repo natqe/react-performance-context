@@ -39,13 +39,4 @@ export const createObjectContext = <T extends { [key: string]: any },>(defaultVa
   }
 }
 
-const methods = {
-  createObjectContext
-}
-
-const ReactPerformanceContext = {
-  ...methods,
-  ReactPerformanceContext: methods
-}
-
-export default ReactPerformanceContext
+export default createObjectContext

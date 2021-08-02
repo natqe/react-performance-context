@@ -10,6 +10,6 @@
     "typescript": "4.3.5"
   },
   "scripts": {
-    "build": "rm -rf build && tsc && cp README.md build/README.md && cp LICENSE build/LICENSE && cp -R src build/src && npm version patch && cp package.json build/package.json && cd build/ && npm publish"
+    "build": "rm -rf build && tsc && cp README.md build/README.md && cp LICENSE build/LICENSE && cp -R src build/src && npm version patch && cp package.json build/package.json"
   }
 }
