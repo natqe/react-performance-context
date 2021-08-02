@@ -17,8 +17,8 @@ execSync(`npm run build`)
 
 for (const { named } of packages) {
     execSync(`cd build/`)
-    const packageJson = readFileSync(`package.json`, `utf-8`)
-    packageJson.replace(/"name":.+,/, `"name": "${named}",`)
+    let packageJson = readFileSync(`package.json`, `utf-8`)
+    packageJson = packageJson.replace(/"name":.+,/, `"name": "${named}",`)
     writeFileSync(`package.json`, packageJson, `utf-8`)
     execSync(`npm publish && cd ../`)
 }
