@@ -2,7 +2,15 @@
   "name": "react-performance-context",
   "description": "A Simple implementation of react context for sharing an object between components without causing unnecessary rendering",
   "version": "0.0.8",
+  "main": "src/index.tsx",
   "private": false,
+  "keywords": [],
+  "author": "Natan Farkash",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/natqe/react-performance-context.git"
+  },
   "dependencies": {
     "@types/node": "16.4.10",
     "@types/react": "17.0.15",
