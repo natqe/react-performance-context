@@ -1,4 +1,4 @@
-const { readFileSync } = require("fs")
+const { readFileSync, writeFileSync } = require("fs")
 const { execSync } = require("node:child_process")
 
 const packages = [
