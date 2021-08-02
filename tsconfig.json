@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "sourceMap": true,
+    "outDir": "./build",
+    "baseUrl": "./src",
+    "sourceRoot": "../../node_modules/react-performance-context/src",
+    "declaration": true,
+    "removeComments": false,
+    "noLib": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+  },
+  "include": [
+    "src"
+  ]
+}
