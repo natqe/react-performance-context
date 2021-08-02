@@ -14,11 +14,10 @@ const packages = [
 ]
 
 execSync(`npm run build`)
+let packageJson = readFileSync(`build/package.json`, `utf-8`)
 
 for (const { named } of packages) {
-    execSync(`cd build/`)
-    let packageJson = readFileSync(`package.json`, `utf-8`)
     packageJson = packageJson.replace(/"name":.+,/, `"name": "${named}",`)
-    writeFileSync(`package.json`, packageJson, `utf-8`)
-    execSync(`npm publish && cd ../`)
+    writeFileSync(`build/package.json`, packageJson, `utf-8`)
+    execSync(`npm run publish`)
 }
