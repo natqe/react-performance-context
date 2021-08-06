@@ -1,7 +1,7 @@
 ### A Simple implementation of react context for sharing an object between components without causing unnecessary rendering
 
 ## Usage
-```tsx
+```jsx
 // Initial value is Required!
 const initialValue = {
     lang: 'en',
