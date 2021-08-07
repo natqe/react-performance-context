@@ -28,10 +28,10 @@ export const createObjectContext = <T extends { [key: string]: any },>(defaultVa
   Provider.displayName = `${displayName}Wrapper`
   return {
     Provider,
-    use<T extends { [0]: keyof typeof hooks } & ReadonlyArray<keyof typeof hooks>>(...args: T) {
-      const initialArgs = useRef(args)
+    use<T extends { [0]: keyof typeof hooks } & ReadonlyArray<keyof typeof hooks>>(...prop: T) {
+      const initialArgs = useRef(prop)
       const result = {} as {
-        [key in typeof args[number]]: ReturnType<typeof hooks[key]>
+        [key in typeof prop[number]]: ReturnType<typeof hooks[key]>
       }
       for (const key of initialArgs.current) result[key] = hooks[key]()
       return result
