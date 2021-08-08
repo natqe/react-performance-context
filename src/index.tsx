@@ -1,4 +1,4 @@
-import { createContext, FC, ProviderProps, useContext, useRef } from "react"
+import { createContext, FC, ProviderProps, useContext, useDebugValue, useRef } from "react"
 
 type Hooks<Type> = {
   [Property in keyof Type]: () => Type[Property]
@@ -12,7 +12,11 @@ export const createObjectContext = <T extends { [key: string]: any },>(defaultVa
   for (const [key, value] of Object.entries(defaultValue)) {
     const PropCtx = createContext(value)
     PropCtx.displayName = `${key}Context`
-    hooks[key as keyof typeof hooks] = () => useContext(PropCtx)
+    hooks[key as keyof typeof hooks] = () => {
+      const result = useContext(PropCtx)
+      useDebugValue(result)
+      return result
+    }
     const Provider = ({ children }) => {
       const { [key]: value } = useContext(Ctx)
       return <PropCtx.Provider {...{ value }}>{children}</PropCtx.Provider>
@@ -34,6 +38,7 @@ export const createObjectContext = <T extends { [key: string]: any },>(defaultVa
         [key in typeof prop[number]]: ReturnType<typeof hooks[key]>
       }
       for (const key of initialArgs.current) result[key] = hooks[key]()
+      useDebugValue(result)
       return result
     }
   }
