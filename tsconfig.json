@@ -5,7 +5,7 @@
     "sourceMap": true,
     "outDir": "./build",
     "baseUrl": "./src",
-    "sourceRoot": "../../node_modules/react-performance-context/src",
+    "sourceRoot": "./src",
     "declaration": true,
     "removeComments": false,
     "noLib": false,
