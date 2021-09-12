@@ -2,7 +2,8 @@
   "name": "react-performance-context",
   "description": "A Simple implementation of react context for sharing an object between components without causing unnecessary rendering",
   "version": "0.0.17",
-  "main": "index.js",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "private": false,
   "keywords": [],
   "author": "Natan Farkash",
@@ -15,11 +16,15 @@
     "react": "17.0.2"
   },
   "devDependencies": {
-    "@types/node": "16.4.10",
-    "@types/react": "17.0.15",
-    "typescript": "4.3.5"
+    "@types/node": "16.9.1",
+    "@types/react": "17.0.20",
+    "typescript": "4.4.3"
   },
   "scripts": {
-    "build": "rm -rf build && tsc && cp README.md build/README.md && cp LICENSE build/LICENSE && cp -R src build/src && npm version patch && cp package.json build/package.json"
-  }
+    "build": "rm -rf build && tsc && npm version patch"
+  },
+  "files": [
+    "build",
+    "src"
+  ]
 }
