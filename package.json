@@ -1,7 +1,7 @@
 {
   "name": "react-performance-context",
   "description": "A Simple implementation of react context for sharing an object between components without causing unnecessary rendering",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "private": false,
